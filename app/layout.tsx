@@ -5,7 +5,7 @@ import './globals.css';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'Internet Mood 2.0',
+  title: 'World Mood-O-Meter',
   description: 'Global sentiment analysis and mood tracking',
 };
 
