@@ -342,11 +342,11 @@ Headlines:${headlines}`,
 		<div className='min-h-screen bg-gradient-to-b from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800'>
 			<main className='container mx-auto px-4 py-6 flex flex-col gap-8'>
 				<div className='text-center'>
-					<h1 className='text-4xl md:text-5xl font-extrabold text-blue-600 dark:text-blue-400'>
+					<h1 className='text-2xl md:text-5xl font-extrabold text-blue-600 dark:text-blue-400'>
 						World Mood-O-Meter
 					</h1>
 					<p className='text-gray-600 dark:text-gray-300 text-sm md:text-base max-w-lg mx-auto mt-2'>
-						Explore global sentiments through news analysis.
+						Explore the mood of the world!
 					</p>
 				</div>
 
