@@ -11,7 +11,7 @@ import {
 } from "@/components/ui/card";
 import { Globe, ChevronsUpDown } from "lucide-react";
 import NewsSection from "@/components/NewsSection";
-
+import Footer from "./Footer";
 interface NewsItem {
 	title: string;
 	snippet: string;
@@ -340,21 +340,21 @@ Headlines:${headlines}`,
 
 	return (
 		<div className='min-h-screen bg-gradient-to-b from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800'>
-			<main className='container mx-auto p-6 space-y-8'>
-				<div className='text-center space-y-4'>
-					<h1 className='text-5xl font-black bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-cyan-600 dark:from-blue-400 dark:to-cyan-400 p-2'>
+			<main className='container mx-auto px-4 py-6 flex flex-col gap-8'>
+				<div className='text-center'>
+					<h1 className='text-4xl md:text-5xl font-extrabold text-blue-600 dark:text-blue-400'>
 						World Mood-O-Meter
 					</h1>
-					<p className='text-gray-600 dark:text-gray-300 max-w-2xl mx-auto'>
-						Explore global mood through news analysis
+					<p className='text-gray-600 dark:text-gray-300 text-sm md:text-base max-w-lg mx-auto mt-2'>
+						Explore global sentiments through news analysis.
 					</p>
 				</div>
 
-				<div className='flex justify-center mb-8'>
-					<div className='relative w-full max-w-md'>
+				<div className='w-full max-w-md mx-auto'>
+					<div className='relative'>
 						<div
 							onClick={() => setOpen(!open)}
-							className='w-full cursor-pointer bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-lg px-4 py-2 flex items-center justify-between'>
+							className='bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-lg px-4 py-2 flex items-center justify-between cursor-pointer'>
 							<span className='text-gray-700 dark:text-gray-200'>
 								{selectedCountry ?? "Select a country..."}
 							</span>
@@ -362,11 +362,11 @@ Headlines:${headlines}`,
 						</div>
 
 						{open && (
-							<div className='absolute mt-2 w-full bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg shadow-lg z-50'>
+							<div className='absolute mt-2 w-full bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-lg shadow-lg z-50'>
 								<input
 									type='text'
 									placeholder='Search country...'
-									className='w-full px-4 py-2 border-b border-gray-200 dark:border-gray-700 focus:outline-none dark:bg-gray-800 dark:text-gray-200'
+									className='w-full px-4 py-2 border-b border-gray-300 dark:border-gray-600 focus:outline-none'
 									onChange={(e) => {
 										const searchTerm =
 											e.target.value.toLowerCase();
@@ -383,12 +383,11 @@ Headlines:${headlines}`,
 									{filteredCountries.map((country) => (
 										<div
 											key={country}
-											className='px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 cursor-pointer flex items-center gap-2'
-											onClick={() => {
-												handleCountrySelect(country);
-												setOpen(false);
-											}}>
-											<Globe className='h-4 w-4 text-gray-500' />
+											onClick={() =>
+												handleCountrySelect(country)
+											}
+											className='px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 cursor-pointer'>
+											<Globe className='h-4 w-4 text-gray-500 inline mr-2' />
 											<span className='text-gray-700 dark:text-gray-200'>
 												{country}
 											</span>
@@ -401,11 +400,11 @@ Headlines:${headlines}`,
 				</div>
 
 				<div className='grid gap-8 lg:grid-cols-2'>
-					<Card className='backdrop-blur-sm bg-white/50 dark:bg-gray-800/50 border-0 shadow-xl'>
+					<Card className='backdrop-blur-sm bg-white/50 dark:bg-gray-800/50 border-0 shadow-lg'>
 						<CardHeader>
 							<CardTitle>Interactive World Map</CardTitle>
 							<CardDescription>
-								Click on any country to analyze its mood
+								Click on any country to analyze its mood.
 							</CardDescription>
 						</CardHeader>
 						<CardContent>
@@ -439,7 +438,9 @@ Headlines:${headlines}`,
 						moodExplanation={moodExplanation}
 					/>
 				</div>
+        
 			</main>
+      <Footer/>
 		</div>
 	);
 };
