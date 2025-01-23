@@ -251,7 +251,7 @@ const MoodMap = () => {
 					method: "POST",
 					headers: {
 						Authorization: `Bearer ${
-							process.env.NEXT_PUBLIC_OPENROUTER_KEY || ""
+							process.env.NEXT_PUBLIC_OPENROUTER_KEY_REMOVE_ME || ""
 						}`,
 						"Content-Type": "application/json",
 					},
