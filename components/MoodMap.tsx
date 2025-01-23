@@ -400,7 +400,7 @@ Headlines:${headlines}`,
 				</div>
 
 				<div className='grid gap-8 lg:grid-cols-2'>
-					<Card className='backdrop-blur-sm bg-white/50 dark:bg-gray-800/50 border-0 shadow-lg overflow-hidden'>
+					<Card className='backdrop-blur-sm bg-white/50 dark:bg-gray-800/50 border-0 shadow-lg overflow-x-auto'>
 						<CardHeader>
 							<CardTitle>Interactive World Map</CardTitle>
 							<CardDescription>
