@@ -251,7 +251,7 @@ const MoodMap = () => {
 					method: "POST",
 					headers: {
 						Authorization: `Bearer ${
-							process.env.NEXT_PUBLIC_OPENROUTER_KEY_REMOVE_ME || ""
+							process.env.NEXT_PUBLIC_OPENROUTER_KEY || ""
 						}`,
 						"Content-Type": "application/json",
 					},
@@ -260,10 +260,23 @@ const MoodMap = () => {
 						messages: [
 							{
 								role: "user",
-								content: `You are an expert sentiment analyst. Analyze the sentiment and infer the general mood of the country. Format your response as:
-MOOD: [positive/neutral/negative]
-REASON: [A concise explanation].
-Headlines:${headlines}`,
+								content: `You are an expert sentiment analyst. Analyze the sentiment and infer the general mood of the country. Format your response as below.
+											Please focus on:
+											- If majority bublic sentiment is postive, then give positive only.
+											- Overall public sentiment
+											- Economic indicators
+											- Social/political stability
+											- Major events' impact
+											- simple language, not too many jargons
+
+											
+											Required format:
+											MOOD: [positive/neutral/negative]
+											REASON: [A concise explanation]
+											HEADLINES: ${headlines}
+
+											
+											`,
 							},
 						],
 					}),
